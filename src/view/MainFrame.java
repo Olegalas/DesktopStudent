@@ -14,7 +14,7 @@ import static view.TableModel.ColumnName.NAME;
 /**
  * Created by dexter on 18.12.16.
  */
-public class MainFrame extends JFrame{
+class MainFrame extends JFrame{
 
     private Manager<Student> manager = StudentManager.getInstance();
 
@@ -28,7 +28,7 @@ public class MainFrame extends JFrame{
     private JPanel mainPanel = new JPanel();
     private JPanel northPanel = new JPanel();
 
-    public MainFrame(){
+    MainFrame(){
         setSize(400, 400);
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -63,6 +63,12 @@ public class MainFrame extends JFrame{
         });
         removeButton.addActionListener(e -> removeStudent());
         searchButton.addActionListener(e -> new SearchFrame(table));
+        editButton.addActionListener(e -> editStudent());
+    }
+
+    private void editStudent() {
+        int i = table.getSelectedRow();
+        new EditFrame(table, i);
     }
 
     private void removeStudent() {

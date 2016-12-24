@@ -10,7 +10,7 @@ import java.awt.*;
 /**
  * Created by dexter on 24.12.16.
  */
-public class SearchFrame extends JFrame {
+class SearchFrame extends JFrame {
 
     private Manager<Student> manager = StudentManager.getInstance();
 
@@ -25,7 +25,7 @@ public class SearchFrame extends JFrame {
 
     private JTable table;
 
-    public SearchFrame(JTable table) {
+    SearchFrame(JTable table) {
         this.table = table;
         setSize(320, 100);
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);

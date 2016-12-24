@@ -4,19 +4,18 @@ import controller.Manager;
 import controller.StudentManager;
 import model.Degree;
 import model.Student;
-import model.Student.StudentBuilder;
 import model.Teacher;
 
 import javax.swing.*;
 import java.awt.*;
 
 /**
- * Created by dexter on 20.12.16.
+ * Created by dexter on 24.12.16.
  */
-class SaveFrame extends JFrame {
+class EditFrame extends JFrame{
 
     private Manager<Student> manager = StudentManager.getInstance();
-    
+
     private JLabel nameLabel = new JLabel("Enter name");
     private JLabel ageLabel = new JLabel("Enter age");
     private JLabel averageLabel = new JLabel("Enter averageGrade");
@@ -40,9 +39,12 @@ class SaveFrame extends JFrame {
     private JPanel southPanel = new JPanel();
 
     private JTable table;
+    private int index;
 
-    SaveFrame(JTable table){
+
+    EditFrame(JTable table, int index) {
         this.table = table;
+        this.index = index;
         setSize(400, 400);
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Save Student");
@@ -54,12 +56,12 @@ class SaveFrame extends JFrame {
 
     private void setActionListeners() {
         cancelButton.addActionListener(e -> dispose());
-        saveButton.addActionListener(e -> initStudent());
+        saveButton.addActionListener(e -> editStudent());
     }
 
-    private void initStudent() {
+    private void editStudent() {
         try{
-            manager.save(getStudent());
+            manager.edit(index, getStudent());
         } catch (Exception ex){
             ex.printStackTrace();
             JOptionPane.showMessageDialog(this, "Wrong input data", "Incorrect", JOptionPane.ERROR_MESSAGE);
@@ -70,11 +72,11 @@ class SaveFrame extends JFrame {
     }
 
     private Student getStudent() {
-        StudentBuilder student = new StudentBuilder();
+        Student.StudentBuilder student = new Student.StudentBuilder();
         student.setAge(Integer.parseInt(ageTextArea.getText()));
         student.setAverageGrade(Double.parseDouble(averageTextArea.getText()));
         student.setName(nameTextArea.getText());
-        student.setTeacher(new Teacher(teacherTextArea.getText(), Integer.parseInt(teacherTextArea.getText()), Degree.getDegree(teacherDegreeTextArea.getText()), Integer.parseInt(teacherSalaryTextArea.getText())));
+        student.setTeacher(new Teacher(teacherTextArea.getText(), Integer.parseInt(teacherAgeTextArea.getText()), Degree.getDegree(teacherDegreeTextArea.getText()), Integer.parseInt(teacherSalaryTextArea.getText())));
         return student.build();
     }
 
@@ -111,5 +113,5 @@ class SaveFrame extends JFrame {
 
         add(mainPanel);
     }
-    
+
 }

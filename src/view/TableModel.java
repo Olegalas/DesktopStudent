@@ -12,7 +12,7 @@ import java.util.jar.Attributes;
 /**
  * Created by dexter on 18.12.16.
  */
-public class TableModel extends AbstractTableModel {
+class TableModel extends AbstractTableModel {
 
     private Manager<Student> manager = StudentManager.getInstance();
 
@@ -57,7 +57,7 @@ public class TableModel extends AbstractTableModel {
         return "*";
     }
 
-    public enum ColumnName{
+    enum ColumnName{
         NAME,
         AGE,
         AVERAGE_GRADE,
