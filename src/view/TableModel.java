@@ -1,13 +1,12 @@
 package view;
 
-import controller.Manager;
-import controller.StudentManager;
+import controller.manager.Manager;
+import controller.manager.StudentManager;
 import model.Student;
 
 import javax.swing.table.AbstractTableModel;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.jar.Attributes;
 
 /**
  * Created by dexter on 18.12.16.
@@ -57,7 +56,7 @@ class TableModel extends AbstractTableModel {
         return "*";
     }
 
-    enum ColumnName{
+    private enum ColumnName{
         NAME,
         AGE,
         AVERAGE_GRADE,

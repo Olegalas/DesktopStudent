@@ -1,9 +1,11 @@
 package model;
 
+import java.io.Serializable;
+
 /**
  * Created by dexter on 16.12.16.
  */
-public class Student {
+public class Student implements Serializable{
 
     private static final Student DEFAULT_STUDENT = new Student("enter name", -1, -1, Teacher.getInstance());
 

@@ -1,4 +1,4 @@
-package controller;
+package controller.manager;
 
 import model.Student;
 

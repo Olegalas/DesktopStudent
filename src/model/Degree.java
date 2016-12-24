@@ -1,9 +1,11 @@
 package model;
 
+import java.io.Serializable;
+
 /**
  * Created by dexter on 17.12.16.
  */
-public enum Degree {
+public enum Degree implements Serializable{
 
     PROFESSOR(),
     DOCTOR(),

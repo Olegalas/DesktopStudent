@@ -1,7 +1,7 @@
 package view;
 
-import controller.Manager;
-import controller.StudentManager;
+import controller.manager.Manager;
+import controller.manager.StudentManager;
 import model.Degree;
 import model.Student;
 import model.Teacher;

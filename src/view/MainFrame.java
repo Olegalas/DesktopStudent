@@ -1,15 +1,13 @@
 package view;
 
-import controller.Manager;
-import controller.StudentManager;
+import controller.manager.Manager;
+import controller.manager.StudentManager;
 import model.Student;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-import static view.TableModel.ColumnName.NAME;
 
 /**
  * Created by dexter on 18.12.16.

@@ -1,11 +1,13 @@
 package model;
 
+import java.io.Serializable;
+
 import static model.Degree.DEFAULT;
 
 /**
  * Created by dexter on 16.12.16.
  */
-public class Teacher {
+public class Teacher implements Serializable{
 
     private static final Teacher DEFAULT_INSTANCE = new Teacher("set name", -1, DEFAULT, -1);
 

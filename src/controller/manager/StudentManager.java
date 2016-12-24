@@ -1,5 +1,6 @@
-package controller;
+package controller.manager;
 
+import controller.serialisation.StudentSerializer;
 import model.Degree;
 import model.Student;
 import model.Teacher;
@@ -17,14 +18,9 @@ public class StudentManager implements Manager<Student> { // is a
     private static final StudentManager MANAGER = new StudentManager();
 
     private Map<String, Integer> rows = new HashMap<>();
-    private List<Student> students = new ArrayList<>();
+    private List<Student> students = StudentSerializer.init();
 
     private StudentManager(){
-        // FOR TESTS
-        students.add(new Student("1", 1, 1, new Teacher("1", 1, Degree.DEFAULT, 1)));
-        students.add(new Student("2", 2, 2, new Teacher("2", 2, Degree.DEFAULT, 2)));
-        students.add(new Student("3", 3, 3, new Teacher("3", 3, Degree.DEFAULT, 3)));
-        students.add(new Student("4", 4, 4, new Teacher("4", 4, Degree.DEFAULT, 4)));
     }
 
     public static StudentManager getInstance(){
@@ -33,10 +29,12 @@ public class StudentManager implements Manager<Student> { // is a
 
     public void save(Student student) {
         students.add(student);
+        StudentSerializer.save(students);
     }
 
     public void remove(int i) {
         students.remove(i);
+        StudentSerializer.save(students);
     }
 
     public Student search(int i) {
@@ -46,6 +44,7 @@ public class StudentManager implements Manager<Student> { // is a
     public Student edit(int i,Student student) {
         Student toReturn = students.get(i);
         students.set(i, student);
+        StudentSerializer.save(students);
         return toReturn;
     }
 

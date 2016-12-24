@@ -1,7 +1,7 @@
 package view;
 
-import controller.Manager;
-import controller.StudentManager;
+import controller.manager.Manager;
+import controller.manager.StudentManager;
 import model.Degree;
 import model.Student;
 import model.Student.StudentBuilder;
@@ -74,7 +74,7 @@ class SaveFrame extends JFrame {
         student.setAge(Integer.parseInt(ageTextArea.getText()));
         student.setAverageGrade(Double.parseDouble(averageTextArea.getText()));
         student.setName(nameTextArea.getText());
-        student.setTeacher(new Teacher(teacherTextArea.getText(), Integer.parseInt(teacherTextArea.getText()), Degree.getDegree(teacherDegreeTextArea.getText()), Integer.parseInt(teacherSalaryTextArea.getText())));
+        student.setTeacher(new Teacher(teacherTextArea.getText(), Integer.parseInt(teacherAgeTextArea.getText()), Degree.getDegree(teacherDegreeTextArea.getText()), Integer.parseInt(teacherSalaryTextArea.getText())));
         return student.build();
     }
 
