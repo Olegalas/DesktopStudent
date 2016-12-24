@@ -1,6 +1,8 @@
 package controller;
 
+import model.Degree;
 import model.Student;
+import model.Teacher;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -14,42 +16,44 @@ public class StudentManager implements Manager<Student> { // is a
 
     private static final StudentManager MANAGER = new StudentManager();
 
-    private Map<String, Student> students = new HashMap<>();
+    private Map<String, Integer> rows = new HashMap<>();
+    private List<Student> students = new ArrayList<>();
 
-
-
-    private StudentManager(){}
+    private StudentManager(){
+        // FOR TESTS
+        students.add(new Student("1", 1, 1, new Teacher("1", 1, Degree.DEFAULT, 1)));
+        students.add(new Student("2", 2, 2, new Teacher("2", 2, Degree.DEFAULT, 2)));
+        students.add(new Student("3", 3, 3, new Teacher("3", 3, Degree.DEFAULT, 3)));
+        students.add(new Student("4", 4, 4, new Teacher("4", 4, Degree.DEFAULT, 4)));
+    }
 
     public static StudentManager getInstance(){
         return MANAGER;
     }
 
     public void save(Student student) {
-        students.put(student.name, student);
+        students.add(student);
     }
 
-    public void remove(String name) {
-        students.remove(name);
+    public void remove(int i) {
+        students.remove(i);
     }
 
-    public Student search(String name) {
-        return students.get(name);
+    public Student search(int i) {
+        return students.get(i);
     }
 
-    public Student edit(String name,Student student) {
-        Student toReturn = student;
-        if(students.containsKey(name)){
-            toReturn = students.get(name);
-            students.put(student.name, student);
-        }
+    public Student edit(int i,Student student) {
+        Student toReturn = students.get(i);
+        students.set(i, student);
         return toReturn;
     }
 
     public List<Student> getAll() {
-        List<Student> studentList = new ArrayList<>();
-        for(Student student : students.values()){
-            studentList.add(student);
-        }
-        return studentList;
+        return students;
+    }
+
+    public Map<String, Integer> getRows() {
+        return rows;
     }
 }

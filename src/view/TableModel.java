@@ -29,7 +29,10 @@ public class TableModel extends AbstractTableModel {
         Student student = manager.getAll().get(rowIndex);
         ColumnName name = ColumnName.getColumnName(columnIndex);
         switch (name){
-            case NAME : return student.name;
+            case NAME : {
+                manager.getRows().put(student.name, rowIndex);
+                return student.name;
+            }
             case AGE : return student.age;
             case AVERAGE_GRADE: return student.averageGrade;
             case TEACHER : return student.teacher.name;

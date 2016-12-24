@@ -39,16 +39,17 @@ public class SaveFrame extends JFrame {
     private JPanel mainPanel = new JPanel();
     private JPanel southPanel = new JPanel();
 
+    private JTable table;
 
-    public SaveFrame(){
-        setVisible(true);
+    public SaveFrame(JTable table){
+        this.table = table;
         setSize(400, 400);
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Save Student");
         init();
-        pack();
         setResizable(false);
         setActionListeners();
+        setVisible(true);
     }
 
     private void setActionListeners() {
@@ -62,6 +63,7 @@ public class SaveFrame extends JFrame {
         } catch (Exception ex){
             JOptionPane.showMessageDialog(this, "Wrong input data", "Incorrect", JOptionPane.ERROR_MESSAGE);
         }
+        table.updateUI();
         dispose();
     }
 

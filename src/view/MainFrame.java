@@ -29,13 +29,13 @@ public class MainFrame extends JFrame{
     private JPanel northPanel = new JPanel();
 
     public MainFrame(){
-        setVisible(true);
         setSize(400, 400);
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setTitle("Student Manager");
         setActionListener();
         init();
+        setVisible(true);
     }
 
     private void init(){
@@ -58,16 +58,17 @@ public class MainFrame extends JFrame{
     private void setActionListener(){
         saveButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                new SaveFrame();
+                new SaveFrame(table);
             }
         });
         removeButton.addActionListener(e -> removeStudent());
+        searchButton.addActionListener(e -> new SearchFrame(table));
     }
 
     private void removeStudent() {
         int i = table.getSelectedRow();
-        String name = (String) table.getModel().getValueAt(i, NAME.ordinal());
-        manager.remove(name);
+        manager.remove(i);
+        table.updateUI();
     }
 
 }
