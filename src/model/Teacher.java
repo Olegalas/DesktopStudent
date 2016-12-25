@@ -27,6 +27,29 @@ public class Teacher implements Serializable{
         return DEFAULT_INSTANCE;
     }
 
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Teacher teacher = (Teacher) o;
+
+        if (age != teacher.age) return false;
+        if (salary != teacher.salary) return false;
+        if (name != null ? !name.equals(teacher.name) : teacher.name != null) return false;
+        return degree == teacher.degree;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = name != null ? name.hashCode() : 0;
+        result = 31 * result + age;
+        result = 31 * result + (degree != null ? degree.hashCode() : 0);
+        result = 31 * result + salary;
+        return result;
+    }
+
     public String toString() {
         return String.format("Teacher. Name - %s; Age - %s; Degree - %s; Salary %s.", name, age, degree, salary);
     }
