@@ -1,0 +1,13 @@
+/home/dexter/Java/IdeaProjects/DesktopStudent/src/main/java/com/dex/desktopstudent/model/Degree.java
+/home/dexter/Java/IdeaProjects/DesktopStudent/src/main/java/com/dex/desktopstudent/view/Run.java
+/home/dexter/Java/IdeaProjects/DesktopStudent/src/main/java/com/dex/desktopstudent/view/SearchFrame.java
+/home/dexter/Java/IdeaProjects/DesktopStudent/src/main/java/com/dex/desktopstudent/model/Teacher.java
+/home/dexter/Java/IdeaProjects/DesktopStudent/src/main/java/com/dex/desktopstudent/controller/manager/TeacherManager.java
+/home/dexter/Java/IdeaProjects/DesktopStudent/src/main/java/com/dex/desktopstudent/view/SaveFrame.java
+/home/dexter/Java/IdeaProjects/DesktopStudent/src/main/java/com/dex/desktopstudent/view/EditFrame.java
+/home/dexter/Java/IdeaProjects/DesktopStudent/src/main/java/com/dex/desktopstudent/view/TableModel.java
+/home/dexter/Java/IdeaProjects/DesktopStudent/src/main/java/com/dex/desktopstudent/controller/manager/Manager.java
+/home/dexter/Java/IdeaProjects/DesktopStudent/src/main/java/com/dex/desktopstudent/model/Student.java
+/home/dexter/Java/IdeaProjects/DesktopStudent/src/main/java/com/dex/desktopstudent/view/MainFrame.java
+/home/dexter/Java/IdeaProjects/DesktopStudent/src/main/java/com/dex/desktopstudent/controller/manager/StudentManager.java
+/home/dexter/Java/IdeaProjects/DesktopStudent/src/main/java/com/dex/desktopstudent/controller/serialisation/StudentSerializer.java

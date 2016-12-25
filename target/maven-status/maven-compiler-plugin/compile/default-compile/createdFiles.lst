@@ -1,0 +1,17 @@
+com/dex/desktopstudent/model/Student$StudentBuilder.class
+com/dex/desktopstudent/controller/manager/StudentManager.class
+com/dex/desktopstudent/view/Run.class
+com/dex/desktopstudent/view/TableModel$ColumnName.class
+com/dex/desktopstudent/view/SearchFrame.class
+com/dex/desktopstudent/view/MainFrame$1.class
+com/dex/desktopstudent/model/Degree.class
+com/dex/desktopstudent/view/SaveFrame.class
+com/dex/desktopstudent/view/TableModel.class
+com/dex/desktopstudent/model/Student.class
+com/dex/desktopstudent/model/Teacher.class
+com/dex/desktopstudent/controller/serialisation/StudentSerializer.class
+com/dex/desktopstudent/view/MainFrame.class
+com/dex/desktopstudent/view/TableModel$1.class
+com/dex/desktopstudent/controller/manager/Manager.class
+com/dex/desktopstudent/controller/manager/TeacherManager.class
+com/dex/desktopstudent/view/EditFrame.class
